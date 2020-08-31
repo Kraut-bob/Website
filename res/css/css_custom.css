@@ -2,11 +2,16 @@
 .dark{ background-color: #2E3309; }
 .dark-accent{ color: #FDB90F;}
 .light-accent{ color: #93A616; }
+.col_1{ 
+    background-color: black;
+    color: #61bdbd; }
+
 
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
-  color: #777;
+  color: #61bdbd;
+  background-color: #f5f5ed;
   line-height: 1.8;
 }
 
@@ -19,9 +24,9 @@ body, html {
 }
 
 /* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url("/res/img/DavidReiffert_s.jpg");
-  min-height: 100%;
+.personalHead {
+  background-image:linear-gradient(to top, #f5f5ed 0%, #bd6161 67%,#d49797 90%);
+  min-height: 45%;
   background-color: #bd6161;
 }
 
@@ -48,4 +53,49 @@ body, html {
     background-attachment: scroll;
     min-height: 400px;
   }
+}
+
+.lines{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  z-index: -1;
+  width: 90vw;} 
+
+.line{
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;}
+.line::after{
+      content: '';
+      display: block;
+      position: absolute;
+      height: 15vh;
+      width: 100%;
+      top: -50%;
+      left: 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #ffffff 75%, #ffffff 100%);
+      animation: run 7s 0s infinite;
+      animation-fill-mode: forwards;
+      animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);}
+
+.line:nth-child(1){margin-left: -25%;} 
+.line:nth-child(1)::after{animation-delay: 1s;}
+.line:nth-child(2){ margin-left: 25%;} 
+.line:nth-child(2)::after{animation-delay: 1.5s}
+.line:nth-child(3){ margin-left: 12.5%;} 
+.line:nth-child(3)::after{animation-delay: 1.75s}
+.line:nth-child(4){ margin-left: -12.5%;} 
+.line:nth-child(4)::after{animation-delay: 2.0s}
+  
+@keyframes run{
+    from{top: -50%}
+    to {top: 110%}
 }
