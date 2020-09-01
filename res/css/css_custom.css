@@ -1,5 +1,7 @@
-.light { background-color:#f5f5ed; }
-.dark{ background-color: #2E3309; }
+:root {
+  --main-bg-color:  #f5f5ed;
+  --main-bg-color_2:  #2E3309;
+}
 .dark-accent{ color: #FDB90F;}
 .light-accent{ color: #93A616; }
 .col_1{ 
@@ -11,9 +13,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
   height: 100%;
   color: #61bdbd;
-  background-color: #f5f5ed;
+  background-color: --main-bg-color;
   line-height: 1.8;
 }
+
+.bar-item-center{padding:8px 16px;width:auto;border:none;display:inline-flex;outline:0}
 
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
@@ -25,7 +29,7 @@ body, html {
 
 /* First image (Logo. Full height) */
 .personalHead {
-  background-image:linear-gradient(to top, #f5f5ed 0%, #bd6161 67%,#d49797 90%);
+  background-image:linear-gradient(45deg, --main-bg-color 0%, #bd6161 67%,#d49797 90%);
   min-height: 45%;
   background-color: #bd6161;
 }
@@ -98,4 +102,40 @@ body, html {
 @keyframes run{
     from{top: -50%}
     to {top: 110%}
+}
+
+.myh1 {
+	font-size: 14vw;
+	text-align: center;
+	line-height: 1;
+	margin: 0;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	color: rgba(45,45,45,1);
+}
+	
+.myh1:before {
+		content: attr(data-heading);
+		position: absolute;
+		overflow: hidden;
+		color: #ffcc00;
+		width: 100%;
+		z-index: 1;
+		text-shadow: none;
+		left: 27.5%;
+		text-align: left;
+		animation: flicker 3s linear infinite;
+	}
+
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		opacity: .99;
+		text-shadow: -1px -1px 0 rgba(#fff, .4), 1px -1px 0 rgba(#fff, .4), -1px 1px 0 rgba(#fff, .4), 1px 1px 0 rgba(#fff, .4), 0 -2px 8px, 0 0 2px, 0 0 5px #ff7e00, 0 0 15px #ff4444, 0 0 2px #ff7e00, 0 2px 3px #000;
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+		text-shadow: none;
+	}
 }
