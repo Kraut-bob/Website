@@ -8,11 +8,10 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<body>
-
+<body class="myBack">
     <!-- Navbar -->
     <div class="w3-top">
-        <div class="w3-card w3-animate-top w3-white" id="myNavbar">
+        <div class="w3-card w3-animate-top" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
                 href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
                 <i class="fa fa-bars"></i>
@@ -32,8 +31,8 @@
     <!-- header with Css animation -->
     <div class="personalHead w3-display-container w3-opacity-min" id="home">
 
-        <div class="w3-display-middle" style="white-space:nowrap;">
-            <span data-heading="I" class="myh1 w3-center w3-padding-large col_1 w3-xlarge w3-wide w3-animate-opacity">DAVID REIFFERT</span>
+        <div class="w3-display-middle">
+            <span data-heading="I" class="myh1 w3-center w3-padding-large w3-xlarge w3-wide">DAVID REIFFERT</span>
         </div>
         <div class="lines">
             <div class="line"></div>
@@ -43,114 +42,114 @@
             <div class="line"></div>
         </div>
     </div>
-    <div class="w3-content w3-container w3-padding-8">
-        <h3 class="w3-center w3-animate-opacity">Software Enigneer</h3>
+    <div class=" w3-display-container w3-opacity-min w3-center">
+        <h3 data-heading="w" class="myh2" onclick="changeData('se')">#Software Enigneer</h3>
+        <h3 data-heading="w" class="myh2" onclick="changeData('sd')">#SAP Developer</h3>
+        <h3 data-heading="w" class="myh2" onclick="changeData('ec')">#SAP EWM Consultant</h3>
+    </div>
+    <canvas id="canvas" width="400" height="100" aria-label="Davids skills" role="chart"
+        class="w3-display-container w3-center">
+        <p>there should be a chart somewhere around here...</p>
+    </canvas>
+    <!-- <div class="w3-display-container">
         <div class="w3-bar w3-center">
             <a href="#" class="bar-item-center">#c++</a>
             <a href="#" class="bar-item-center">#csharp</a>
             <a href="#" class="bar-item-center">#python</a>
             <a href="#" class="bar-item-center">#javascript</a>
         </div>
-        <h3 class="w3-center w3-animate-opacity">SAP Developer & Consultant</h3>
+    </div> -->
+    <!-- div class=" w3-display-container w3-opacity-min w3-center">
+        <h3 data-heading="v" class="myh2">SAP Developer & Consultant</h3>
+    </div>
+    <div class="w3-display-container">
         <div class="w3-bar w3-center">
             <a href="#" class="bar-item-center">#abap-oo</a>
             <a href="#" class="bar-item-center">#csharp</a>
             <a href="#" class="bar-item-center">#python</a>
             <a href="#" class="bar-item-center">#javascript</a>
         </div>
-
-    </div>
-
-    <!-- Second Parallax Image with Portfolio Text -->
-    <div class="bgimg-2 w3-display-container w3-opacity-min">
-        <div class="w3-display-middle">
-            <span class="w3-xxlarge w3-text-white w3-wide">VITA</span>
-        </div>
-    </div>
-
-    <!-- Container (Portfolio Section) -->
-    <div class="w3-content w3-container w3-padding-64" id="vita">
-        <h3 class="w3-center">MY WORK</h3>
-        <p class="w3-center"><em>Here are some of my latest lorem work ipsum tipsum.<br> Click on the images to make
-                them bigger</em></p><br>
-
-        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
-        <div class="w3-row-padding w3-center">
-            <div class="w3-col m3">
-                <img src="/w3images/p1.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="The mist over the mountains">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p2.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Coffee beans">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p3.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Bear closeup">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p4.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Quiet ocean">
-            </div>
-        </div>
-
-        <div class="w3-row-padding w3-center w3-section">
-            <div class="w3-col m3">
-                <img src="/w3images/p5.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="The mist">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p6.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="My beloved typewriter">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p7.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Empty ghost train">
-            </div>
-
-            <div class="w3-col m3">
-                <img src="/w3images/p8.jpg" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity"
-                    alt="Sailing">
-            </div>
-            <button class="w3-button w3-padding-large w3-light-grey" style="margin-top:64px">LOAD MORE</button>
-        </div>
-    </div>
-
-    <!-- Modal for full size images on click-->
-    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
-        <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i
-                class="fa fa-remove"></i></span>
-        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-            <img id="img01" class="w3-image">
-            <p id="caption" class="w3-opacity w3-large"></p>
-        </div>
-    </div>
+    </div> -->
 
     <!-- Footer -->
     <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-        <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
         <div class="w3-xlarge w3-section">
-            <i class="fa fa-facebook-official w3-hover-opacity"></i>
-            <i class="fa fa-instagram w3-hover-opacity"></i>
-            <i class="fa fa-snapchat w3-hover-opacity"></i>
-            <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-            <i class="fa fa-twitter w3-hover-opacity"></i>
-            <i class="fa fa-linkedin w3-hover-opacity"></i>
+            <a href="https://github.com/Kraut-bob" target="_blank" class="fa fa-github w3-hover-opacity w3-button"></a>
+            <a href="https://www.linkedin.com/in/david-reiffert-65361b167/" target="_blank"
+                class="fa fa-linkedin w3-hover-opacity w3-button"></a>
+            <a href="https://www.xing.com/profile/David_Reiffert/cv" target="_blank"
+                class="fa fa-xing w3-hover-opacity w3-button"></a>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script>
-        // Modal Image Gallery
-        function onClick(element) {
-            document.getElementById("img01").src = element.src;
-            document.getElementById("modal01").style.display = "block";
-            var captionText = document.getElementById("caption");
-            captionText.innerHTML = element.alt;
+        var myPieChart;
+        var dataSE = {
+            data: [10, 20, 20, 30, 20],
+            label: 'Software Engineer',
+            labels: ['C++', 'CSharp', 'ABAP-OO', 'JavaScript', 'Python'],
+            backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe', '#ffce56']
+        };
+        var dataSapDev = {
+            data: [15, 40, 25, 30],
+            label: 'SAP Developer',
+            labels: ['t1', 't2', 'ABAP-OO', 't3'],
+            backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe', '#ffce56']
+        };
+        var dataSE = {
+            data: [10, 20, 20, 30],
+            label: 'SAP EWM Consultant',
+            labels: ['C++', 'CSharp', 'ABAP-OO', 'JavaScript', 'Python'],
+            backgroundColor: ['#ff6384', '#36a2eb', '#cc65fe', '#ffce56']
+        };
+
+        window.onload = function () {
+            onSiteLoad();
+        }
+
+        function onSiteLoad() {
+            var ctx = document.getElementById('canvas').getContext('2d');
+            var data = {
+                datasets: [dataSE],
+            };
+            var options = {
+                tooltips: {
+                    callbacks: {
+                        label: function (item, data) {
+                            // console.log(item)
+                            var label = data.datasets[item.datasetIndex].labels[item.index];
+                            var value = data.datasets[item.datasetIndex].data[item.index];
+                            return label + ': ' + value;
+                        }
+                    }
+                }
+            };
+
+            myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: data,
+                options: options
+            });
+
+            myPieChart.render();
+        }
+
+        function changeData(changeToSet) {
+            switch (changeToSet) {
+                case "se":
+                    alert('Software');
+                    break;
+                case "sd":
+                    myPieChart.data.datasets.forEach((dataset) => { dataset.data.splice(0, dataset.data.length); });
+                    myPieChart.data.datasets.forEach((dataset) => { dataset == dataSapDev; });
+                    myPieChart.update();
+                    break;
+                case "ec":
+                    alert('ewm consult');
+                    break;
+            }
+
         }
 
         // Used to toggle the menu on small screens when clicking on the menu button
@@ -163,7 +162,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>
