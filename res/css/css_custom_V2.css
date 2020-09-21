@@ -36,6 +36,7 @@
   font-size: 14px;
   color: white;
   font-weight: bold;
+/*  min-width: auto; */
   text-shadow: 0.1em 0 black, 0 0.1em black, -0.1em 0 black, 0 -0.1em black, -0.1em -0.1em black, -0.1em 0.1em black, 0.1em -0.1em black, 0.1em 0.1em black;
 }
 .bar::before{
