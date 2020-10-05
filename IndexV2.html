@@ -20,7 +20,6 @@
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#vita">Timeline</a></li>
             <li><a href="#legal">Legal</a></li>
         </ul>
     </nav>
@@ -50,86 +49,6 @@
                 </section>
             </article>
         </div>
-        <div class="container" id="vita">
-            <article>
-                <h2>Timeline</h2>
-            </article>
-            <section class="timeline">
-                <ul>
-                    <li>
-                        <div>
-                            <time>2012</time>
-                            <div class="discovery">
-                                <h1>#Hello World</h1>
-                                <p>
-                                    for the first time
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <time>2014</time>
-                            <div class="discovery">
-                                <h1>First public web app</h1>
-                                <p>
-                                    <a href="https://www.fhws.de/service/news-presse/pressemeldungen/?tx_ttnews%5Btt_news%5D=707&cHash=864df2adb4db13ca504391f1fcf4e0ec"
-                                        title="ESRI Young Scholars Award"> Campus Information System
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <time>2015</time>
-                            <div class="discovery">
-                                <h1>First real project</h1>
-                                <p>
-                                    collection/evaluation/alarming/display of automatic measurements
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <time>2016</time>
-                            <div class="discovery">
-                                <h1>First SAP project</h1>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <time>2018</time>
-                            <div class="discovery">
-                                <h1>First Website</h1>
-                                <p> <a target="_blank" href="https://www.reiffert-optik.de/"
-                                        title="Reiffert Augenoptik & Hörakustik">Reiffert Augenoptik & Hörakustik
-                                    </a>
-                                </p>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <time>2019</time>
-                            <div class="discovery">
-                                <h1>First 3D Printer</h1>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div>
-                            <time>2020</time>
-                            <div class="discovery">
-                                <h1>First IoT devices</h1>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </section>
-        </div>
     </main>
     <footer class="page-footer">
         <div class="container">
@@ -151,33 +70,5 @@
         </div>
     </footer>
 </body>
-<script type="text/javascript">
-    var items = document.querySelectorAll(".timeline li");
-
-    function isElementInViewport(el) {
-        var rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
-
-    function callbackFunc() {
-        for (var i = 0; i < items.length; i++) {
-            if (isElementInViewport(items[i])) {
-                if (!items[i].classList.contains("in-view")) {
-                    items[i].classList.add("in-view");
-                }
-            } else if (items[i].classList.contains("in-view")) {
-                items[i].classList.remove("in-view");
-            }
-        }
-    }
-
-    window.addEventListener("load", callbackFunc);
-    window.addEventListener("scroll", callbackFunc);
-</script>
 
 </html>
