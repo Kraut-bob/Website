@@ -3,7 +3,7 @@
 <title>David Reiffert</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="res/css/css_custom_V2.css">
+<link rel="stylesheet" href="res/css/style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -85,7 +85,7 @@
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["Software Enigneer", "SAP ABAP OO Developer", "SAP EWM Consultant"];
+const textArray = ["Software Engineer", "SAP ABAP OO Developer", "SAP EWM Consultant"];
 const typingDelay = 100;
 const erasingDelay = 100;
 const newTextDelay = 2000;
@@ -120,7 +120,7 @@ function erase() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+document.addEventListener("DOMContentLoaded", function() {
   if(textArray.length) setTimeout(type, newTextDelay + 250);
 });
 </script>
