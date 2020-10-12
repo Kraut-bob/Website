@@ -74,10 +74,14 @@
  :root {
      --width--container: 900px;
  }
- *::after, *::before {
+ /* *::after, *::before {
      -webkit-box-sizing: border-box;
              box-sizing: border-box;
- }
+ } */
+ *, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
  html {
      overflow-x: hidden;
  }
@@ -87,6 +91,7 @@
      font-size: 100%;
      text-rendering: optimizeSpeed;
      overflow-x: hidden;
+     line-height: 1.5;
  }
  
  nav {
@@ -248,24 +253,22 @@
  }
  footer a {
      text-decoration: none;
-     color: #252f38;
-     border-bottom: solid 2px #e2845b;
      -webkit-transition: all 0.3s ease-in-out;
      transition: all 0.3s ease-in-out;
  }
- footer a svg {
+ /* footer a svg {
      width: 0.8rem;
      height: 0.8rem;
      fill: #edebe3;
      margin-right: 5px;
- }
+ } */
  footer a:focus {
      background-color: #e2845b;
      color: #252f38;
  }
- footer a:focus svg {
+ /* footer a:focus svg {
      fill: #e2845b;
- }
+ } */
  header {
      grid-area: header;
  }
