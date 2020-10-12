@@ -42,6 +42,7 @@
   color: white;
   font-weight: bold;
   text-shadow: 0.1em 0 black, 0 0.1em black, -0.1em 0 black, 0 -0.1em black, -0.1em -0.1em black, -0.1em 0.1em black, 0.1em -0.1em black, 0.1em 0.1em black;
+  white-space: nowrap;
 }
 .bar::before{
   content:  attr(data-skill);
@@ -74,10 +75,6 @@
  :root {
      --width--container: 900px;
  }
- /* *::after, *::before {
-     -webkit-box-sizing: border-box;
-             box-sizing: border-box;
- } */
  *, ::after, ::before {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
