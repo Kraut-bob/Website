@@ -34,10 +34,6 @@
             }
 }
 
-#c1{
-  width: 50%;
-}
-
 .bar{
   background-color: var(--bg-color_2);
   padding: 2px;
@@ -78,19 +74,17 @@
  :root {
      --width--container: 900px;
  }
- *::after {
+ *::after, *::before {
      -webkit-box-sizing: border-box;
              box-sizing: border-box;
  }
  html {
      overflow-x: hidden;
  }
- 
- /* Set core body defaults */
+
  body {
      min-height: 100vh;
      font-size: 100%;
-     line-height: 1.5;
      text-rendering: optimizeSpeed;
      overflow-x: hidden;
  }
