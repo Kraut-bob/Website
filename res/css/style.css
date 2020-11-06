@@ -25,8 +25,13 @@
   }
 }
 
-#c1{
-  width: 50%;
+@keyframes animate-stripes{
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 80px 0;
+            }
 }
 
 .bar{
@@ -37,22 +42,18 @@
   color: white;
   font-weight: bold;
   text-shadow: 0.1em 0 black, 0 0.1em black, -0.1em 0 black, 0 -0.1em black, -0.1em -0.1em black, -0.1em 0.1em black, 0.1em -0.1em black, 0.1em 0.1em black;
+  white-space: nowrap;
 }
 .bar::before{
   content:  attr(data-skill);
-  white-space: nowrap;
   background-image: repeating-linear-gradient(
     -45deg,
     transparent 0 2px,
-    #e2845b91 2px 4px
-);
+    #e2845b91 2px 4px);
   display: inline-block;
   padding: 5px 0 5px 10px;
   border-radius: inherit;
-  animation: load 2s 0s;
-  -webkit-animation: load 2s 0s;
-  -moz-animation: load 2s 0s;
-  -o-animation: load 2s 0s;
+  animation: load 2s 0s, animate-stripes 3s linear infinite;
 }
 
 .bar.learning::before{
@@ -71,49 +72,25 @@
   width: calc(100% - 10px);
 }
 
- @import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Karla&display=swap");
  :root {
      --width--container: 900px;
  }
- 
- *,
- *::before,
- *::after {
-     -webkit-box-sizing: border-box;
-             box-sizing: border-box;
- }
- body,
- h1,
- h2,
- h3,
- h4,
- h5,
- h6 {
-     margin: 0;
- }
- 
+ *, ::after, ::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
  html {
      overflow-x: hidden;
  }
- 
+
  body {
      min-height: 100vh;
      font-size: 100%;
-     line-height: 1.5;
      text-rendering: optimizeSpeed;
      overflow-x: hidden;
+     line-height: 1.5;
  }
- @media (prefers-reduced-motion: reduce) {
-     * {
-         -webkit-animation-duration: 0.01ms !important;
-                 animation-duration: 0.01ms !important;
-         -webkit-animation-iteration-count: 1 !important;
-                 animation-iteration-count: 1 !important;
-         -webkit-transition-duration: 0.01ms !important;
-                 transition-duration: 0.01ms !important;
-         scroll-behavior: auto !important;
-     }
- }
+ 
  nav {
      position: fixed;
      top: 0;
@@ -151,7 +128,7 @@
      -webkit-writing-mode: vertical-rl;
          -ms-writing-mode: tb-rl;
              writing-mode: vertical-rl;
-     overflow-y: auto;
+             overflow: hidden;
  }
  nav ul li {
      padding: 10px 0;
@@ -177,53 +154,11 @@
      border-left: solid 4px #99b7bb;
      border-bottom: 0;
  }
- nav ul li a:hover,
  nav ul li a:focus {
      border-left: solid 4px #edebe3;
      border-bottom: 0;
  }
  
- @media only screen and (min-width: 640px) {
-     nav {
-         top: 0;
-         left: 0;
-         width: 100%;
-         height: auto;
-         background-color: #99b7bb;
-         -webkit-box-orient: horizontal;
-         -webkit-box-direction: normal;
-             -ms-flex-direction: row;
-                 flex-direction: row;
-         -webkit-box-pack: end;
-             -ms-flex-pack: end;
-                 justify-content: flex-end;
-     }
-     nav ul {
-         -webkit-box-pack: end;
-             -ms-flex-pack: end;
-                 justify-content: flex-end;
-         -webkit-writing-mode: horizontal-tb;
-             -ms-writing-mode: lr-tb;
-                 writing-mode: horizontal-tb;
-         padding: 0;
-         width: auto;
-         overflow: hidden;
-     }
-     nav ul li {
-         padding: 0 10px;
-         width: auto;
-     }
-     nav ul li a {
-         padding: 20px 0;
-         border-bottom: solid 4px #99b7bb;
-         border-left: 0;
-     }
-     nav ul li a:hover,
-     nav ul li a:focus {
-         border-bottom: solid 4px #edebe3;
-         border-left: 0;
-     }
- }
  header {
      padding-top: 120px;
      padding-bottom: 1rem;
@@ -258,7 +193,7 @@
      bottom: 0;
      left: 0;
      height: 15px;
-     width: 120px;
+     width: 185px;
      background-image: repeating-linear-gradient(
          -45deg,
          transparent 0 2px,
@@ -297,30 +232,13 @@
      padding: 8px 20px;
      text-align: center;
  }
- header .container > a.link-github:hover,
  header .container > a.link-github:focus {
      background-color: transparent;
  }
- header .container > a.link-github:hover,
  header .container > a.link-github:focus {
      color: #edebe3;
  }
  
- @media screen and (max-width: 640px) {
-     header {
-         padding-top: 1.5rem;
-     }
-     header .container {
-         max-width: 100%;
-         padding-right: 60px;
-         grid-template-areas: "h1block" "h2block" "space" "maintained" "github";
-         grid-template-columns: auto;
-         grid-template-rows: auto auto 4rem 2fr 1fr;
-     }
-     header .container h1 {
-         font-size: 6rem;
-     }
- }
  html {
      scroll-behavior: smooth;
  }
@@ -330,48 +248,24 @@
      grid-template-areas: "header header" "main main" "aside1 aside2" "footer footer";
      grid-template-columns: 1fr 1fr;
  }
- 
- header a,
- main a,
- aside a,
  footer a {
      text-decoration: none;
-     color: #252f38;
-     border-bottom: solid 2px #e2845b;
      -webkit-transition: all 0.3s ease-in-out;
      transition: all 0.3s ease-in-out;
  }
- header a svg,
- main a svg,
- aside a svg,
- footer a svg {
+ /* footer a svg {
      width: 0.8rem;
      height: 0.8rem;
      fill: #edebe3;
      margin-right: 5px;
- }
- header a:hover,
- header a:focus,
- main a:hover,
- main a:focus,
- aside a:hover,
- aside a:focus,
- footer a:hover,
+ } */
  footer a:focus {
      background-color: #e2845b;
      color: #252f38;
  }
- header a:hover svg,
- header a:focus svg,
- main a:hover svg,
- main a:focus svg,
- aside a:hover svg,
- aside a:focus svg,
- footer a:hover svg,
- footer a:focus svg {
+ /* footer a:focus svg {
      fill: #e2845b;
- }
- 
+ } */
  header {
      grid-area: header;
  }
@@ -549,11 +443,9 @@
          -ms-flex: 1;
              flex: 1;
  }
- article footer#files .container > a:hover,
  article footer#files .container > a:focus {
      background-color: transparent;
- }
- 
+ } 
  footer.page-footer {
      grid-area: footer;
      background-color: #252f38;
@@ -562,7 +454,11 @@
  footer.page-footer a {
      color: #edebe3;
  }
- footer.page-footer a:hover,
+ footer.page-footer a:hover
+ {
+   color:#e2845b;
+   background-color:#252f38
+ }
  footer.page-footer a:focus {
      color: #252f38;
  }
@@ -604,53 +500,13 @@
      text-align: center;
      width: 100%;
  }
- footer.page-footer ul li a:hover,
  footer.page-footer ul li a:focus {
      background-color: transparent;
  }
- footer.page-footer ul li a:hover,
  footer.page-footer ul li a:focus {
      color: #edebe3;
  }
- 
- @media screen and (max-width: 640px) {
-     body {
-         grid-template-areas: "header" "main" "footer";
-         grid-template-columns: 1fr;
-     }
- 
-     article {
-         max-width: 100%;
-     }
-     article section a.link-guidelines {
-         display: block;
-     }
- 
-     article,
-     aside.profile,
-     aside#styles,
-     aside#sponsor-footer {
-         padding-right: 60px;
-     }
- 
-     aside#styles .container {
-         max-width: 100%;
-     }
- 
-     footer.page-footer .container {
-         max-width: 100%;
-         padding-right: 60px;
-     }
- 
-     .skip-link:focus {
-         top: 1rem;
-     }
- }
- @media screen and (max-width: 900px) {
-     article:not(:last-child):after {
-         left: calc(35vw - 30px);
-     }
- }
+  
  body {
      font-family: "Karla", sans-serif;
      font-size: 18px;
@@ -672,6 +528,7 @@
   .container h2 span.cursor.typing {
     animation: none;
   }
+
   @keyframes blink {
     0%  { background-color: #ccc; }
     49% { background-color: #ccc; }
@@ -679,3 +536,92 @@
     99% { background-color: transparent; }
     100%  { background-color: #ccc; }
   }
+
+  /* Remove all animations and transitions for people that prefer not to see them */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+        -webkit-animation-duration: 0.01ms !important;
+                animation-duration: 0.01ms !important;
+        -webkit-animation-iteration-count: 1 !important;
+                animation-iteration-count: 1 !important;
+        -webkit-transition-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+  @media only screen and (min-width: 640px) {
+    nav {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: #99b7bb;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+    }
+    nav ul {
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end;
+        -webkit-writing-mode: horizontal-tb;
+            -ms-writing-mode: lr-tb;
+                writing-mode: horizontal-tb;
+        padding: 0;
+        width: auto;
+        overflow: hidden;
+    }
+    nav ul li {
+        padding: 0 10px;
+        width: auto;
+    }
+    nav ul li a {
+        padding: 20px 0;
+        border-bottom: solid 4px #99b7bb;
+        border-left: 0;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+        border-bottom: solid 4px #edebe3;
+        border-left: 0;
+    }
+}
+
+    @media screen and (max-width: 640px) {
+        body {
+            grid-template-areas: "header" "main" "aside2" "aside1" "footer";
+            grid-template-columns: 1fr;
+        }
+    
+        article {
+            max-width: 100%;
+        }
+        article section a.link-guidelines {
+            display: block;
+        }
+        footer.page-footer .container {
+            max-width: 100%;
+            padding-right: 60px;
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+        header {
+            padding-top: 1.5rem;
+        }
+        header .container {
+            max-width: 100%;
+            padding-right: 60px;
+            grid-template-areas: "h1block" "h2block" "space" "maintained" "github";
+            grid-template-columns: auto;
+            grid-template-rows: auto auto 4rem 2fr 1fr;
+        }
+        header .container h1 {
+            font-size: 6rem;
+        }
+    }
